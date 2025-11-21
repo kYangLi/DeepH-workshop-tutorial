@@ -2,6 +2,16 @@ site_name: Tutorial for DeepH-pack Workshop 2025
 # site_url: https://your-repo-url.rtfd.io/
 site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
 
+# .mkdocs.yml
+docs_dir: "." 
+
+exclude_docs: |
+  .readthedocs.yaml
+  .gitignore
+  LICENSE
+  requirements.txt
+  *.py
+
 theme: 
   name: readthedocs
   features:
