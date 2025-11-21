@@ -22,7 +22,6 @@ theme:
 plugins:
   - search
   - markdownextradata
-  - mkdocs-material
 
 nav:
   - Home: README.md
