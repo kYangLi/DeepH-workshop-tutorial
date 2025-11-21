@@ -1,0 +1,56 @@
+site_name: Tutorial for DeepH-pack Workshop 2025
+# site_url: https://your-repo-url.rtfd.io/
+site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
+
+theme: 
+  name: readthedocs
+  features:
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+
+plugins:
+  - search
+  - markdownextradata
+  - mkdocs-material
+
+nav:
+  - Home: README.md
+  - Theoretical Backgrounds: 
+      - "Fundamentals": 1.Theoretical_backgrounds.md
+  - Getting Started:
+      - "Installation Guide": 2.Installation.md
+      - "Data Interface Setup": 3.Interface.md
+  - Core Workflows:
+      - "Model Training": 4.Training.md
+      - "Prediction & Inference": 5.Inference.md
+  - Advanced Applications:
+      - "Universal Materials Models": 6.UMM_odyssey.md
+
+copyright: "Copyright &copy; 2025 DeepH Team"
+
+extra:
+  # analytics:
+  #   provider: google
+  #   property: UA-XXXXX-1
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/kYangLi/DeepH-workshop-tutorial 
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
