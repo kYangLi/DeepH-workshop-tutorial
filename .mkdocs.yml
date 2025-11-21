@@ -6,8 +6,7 @@ site_description: "Comprehensive guide for DeepH-pack: from theory to practical 
 docs_dir: ".docs"
 
 theme: 
-  # name: readthedocs
-  name: material
+  name: readthedocs
   features:
     - navigation.tabs
     - navigation.top
