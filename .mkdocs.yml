@@ -1,5 +1,5 @@
 site_name: Tutorial for DeepH-pack Workshop 2025
-# site_url: https://your-repo-url.rtfd.io/
+site_url: https://deeph-workshop-tutorial.readthedocs.io/
 site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
 
 # .mkdocs.yml
