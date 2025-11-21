@@ -3,14 +3,7 @@ site_name: Tutorial for DeepH-pack Workshop 2025
 site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
 
 # .mkdocs.yml
-docs_dir: "." 
-
-exclude_docs: |
-  .readthedocs.yaml
-  .gitignore
-  LICENSE
-  requirements.txt
-  *.py
+docs_dir: ".docs"
 
 theme: 
   name: readthedocs
