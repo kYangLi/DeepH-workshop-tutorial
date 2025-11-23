@@ -14,7 +14,7 @@ build:
 # sphinx:
 #    configuration: .readthedocs.conf.py
 mkdocs:
-  configuration: .mkdocs.yml  # MkDocs 配置文
+  configuration: .mkdocs.yml  # MkDocs
 
 # Optionally, but recommended,
 # declare the Python requirements required to build your documentation
