@@ -1,6 +1,7 @@
 site_name: Tutorial for DeepH-pack Workshop 2025
 site_url: https://deeph-workshop-tutorial.readthedocs.io/
 repo_url: https://github.com/kYangLi/DeepH-workshop-tutorial/
+edit_uri: tree/main
 site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
 docs_dir: ".docs"
 
