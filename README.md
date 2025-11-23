@@ -31,9 +31,9 @@ It is important to emphasize that, despite the dedicated efforts in preparing th
 
 The rest part of the tutorials are arranged as follows:
 
-- `1.Teoretical_backgrounds.md` includes a brief technical guidance for understanding the theoretical backgrounds.
+- `1.Theoretical_backgrounds.md` includes a brief technical guidance for understanding the theoretical backgrounds.
 - `2.Installation.md` provides a hand-on guide for installing DeepH-pack and related pre-/post-processing tools (many of which are integrated in DeepH-dock).
 - `3.Interface.md` provides a hand-on guide for generating DeepH-formatted Hamiltonian and structural files for subsequent training.
 - `4.Training.md` illustrates how to perform DeepH-pack training.
 - `5.Inference.md` presents an example for DeepH inference.
-- `6.UMM_odyssey` demonstrates leveraging pretrained Universal Materials Models.
+- `6.UMM_odyssey` demonstrates leveraging pre-trained Universal Materials Models.
