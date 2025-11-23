@@ -31,15 +31,13 @@ nav:
 copyright: "Copyright &copy; 2025 DeepH Team"
 
 extra:
-  # analytics:
-  #   provider: google
-  #   property: UA-XXXXX-1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/kYangLi/DeepH-workshop-tutorial 
 
 extra_css:
   - stylesheets/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
   - https://polyfill.io/v3/polyfill.min.js?features=es6
