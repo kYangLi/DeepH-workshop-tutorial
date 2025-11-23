@@ -31,9 +31,10 @@ nav:
 copyright: "Copyright &copy; 2025 DeepH Team"
 
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/kYangLi/DeepH-workshop-tutorial 
+  github_url: https://github.com/kYangLi/DeepH-workshop-tutorial
+  # social:
+  #   - icon: fontawesome/brands/github
+  #     link: https://github.com/kYangLi/DeepH-workshop-tutorial 
 
 extra_css:
   # - stylesheets/extra.css
