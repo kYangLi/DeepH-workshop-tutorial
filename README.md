@@ -21,8 +21,12 @@ docs/                      # the tutorial itself, one folder per language
     5.Inference.md
     6.UMM_odyssey.md
     figures/
-  zh/                      #   Chinese sources, once translated (published as /zh-cn/…)
-.mkdocs.yml                # MkDocs config; docs_dir is chosen by DOCS_DIR
+  zh/                      #   Chinese sources (published as /zh-cn/…)
+    index.md
+    figures/
+.mkdocs.yml                # shared config: theme, extensions, plugins
+.mkdocs/en.yml             # English layer: site_name + nav
+.mkdocs/zh.yml             # Chinese layer: site_name + nav
 .readthedocs.yaml          # Read the Docs build recipe
 .requirements.txt          # build dependencies
 ```
@@ -35,10 +39,10 @@ uv pip install -r .requirements.txt
 uv run mkdocs serve -f .mkdocs.yml
 ```
 
-Then open <http://127.0.0.1:8000/>. To preview another language, point `DOCS_DIR` at it:
+Then open <http://127.0.0.1:8000/>. To preview the Chinese build, point both variables at it:
 
 ```bash
-DOCS_DIR=docs/zh uv run mkdocs serve -f .mkdocs.yml
+DOCS_DIR=docs/zh I18N_BASE=.mkdocs/zh.yml uv run mkdocs serve -f .mkdocs.yml
 ```
 
 ## Editions
@@ -56,19 +60,26 @@ one. Adding a year means branching, not moving files.
 
 One repository, one set of branches, two Read the Docs projects:
 
-| Read the Docs project | language | `DOCS_DIR` | URL |
-|---|---|---|---|
-| `deeph-workshop-tutorial` | English | `docs/en` (default) | `/en/…` |
-| `deeph-workshop-tutorial-zh` | 简体中文 | `docs/zh` | `/zh-cn/…` |
+| Read the Docs project | language | `DOCS_DIR` | `I18N_BASE` | URL |
+|---|---|---|---|---|
+| `deeph-workshop-tutorial` | English | — (default `docs/en`) | — (default `.mkdocs/en.yml`) | `/en/…` |
+| `deeph-workshop-tutorial-zh` | 简体中文 | `docs/zh` | `.mkdocs/zh.yml` | `/zh-cn/…` |
 
-`.mkdocs.yml` takes `docs_dir` from the `DOCS_DIR` environment variable, so the two
-projects build different source trees from the same commit. The Chinese project is added
-as a **translation** of the English one, which is what gives the language switcher and
-the `/zh-cn/` prefix. Nothing is duplicated between the branches, so a year's English and
-Chinese text are reviewed in the same pull request.
+Both variables are set under **Admin → Environment Variables** in the Read the Docs
+project. `.mkdocs.yml` reads them while building, so the two projects build different
+source trees and different nav from the same commit — no branch per language, no
+duplicated content. The Chinese project is added as a **translation** of the English one,
+which is what gives the language switcher and the `/zh-cn/` prefix.
 
-Both projects build every version listed above, so `/zh-cn/2025/` exists as soon as the
+Both projects build every version listed above, so `/zh-cn/2025/` works as soon as the
 `2025` branch has Chinese sources.
+
+### Adding a translated chapter
+
+1. Translate the file into `docs/zh/`, keeping the same filename (`4.Training.md` stays
+   `4.Training.md`) so the two trees stay comparable.
+2. Add a line for it in `.mkdocs/zh.yml` under `nav`. Until a chapter is listed there it
+   is built but unreachable, so translate and publish one chapter at a time.
 
 ## License
 

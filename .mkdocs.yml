@@ -1,30 +1,24 @@
-site_name: Tutorial for DeepH-pack Workshop 2025
+# Shared build configuration for every language.
+#
+# INHERIT picks the language layer (site_name + nav), docs_dir picks its sources.
+# Two Read the Docs projects build this same file from the same commit:
+#
+#   English   DOCS_DIR unset     I18N_BASE unset          -> docs/en + .mkdocs/en.yml
+#   简体中文   DOCS_DIR=docs/zh   I18N_BASE=.mkdocs/zh.yml -> docs/zh + .mkdocs/zh.yml
+
+INHERIT: !ENV [I18N_BASE, ".mkdocs/en.yml"]
+docs_dir: !ENV [DOCS_DIR, "docs/en"]
+
 site_url: https://deeph-workshop-tutorial.readthedocs.io/
 repo_url: https://github.com/kYangLi/DeepH-workshop-tutorial/
 repo_name: kYangLi/DeepH-workshop-tutorial
 edit_uri: edit/main/docs/
-site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
-
-docs_dir: !ENV [DOCS_DIR, "docs/en"]
 
 theme:
   name: readthedocs
 
 plugins:
   - search
-
-nav:
-  - Home: index.md
-  - Theoretical Backgrounds:
-      - "Fundamentals": 1.Theoretical_backgrounds.md
-  - Getting Started:
-      - "Installation Guide": 2.Installation.md
-      - "Data Interface Setup": 3.Interface.md
-  - Core Workflows:
-      - "Model Training": 4.Training.md
-      - "Prediction & Inference": 5.Inference.md
-  - Advanced Applications:
-      - "Universal Materials Models": 6.UMM_odyssey.md
 
 copyright: "Copyright &copy; 2025 DeepH Team"
 

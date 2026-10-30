@@ -1,0 +1,15 @@
+site_name: Tutorial for DeepH-pack Workshop 2025
+site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
+
+nav:
+  - Home: index.md
+  - Theoretical Backgrounds:
+      - "Fundamentals": 1.Theoretical_backgrounds.md
+  - Getting Started:
+      - "Installation Guide": 2.Installation.md
+      - "Data Interface Setup": 3.Interface.md
+  - Core Workflows:
+      - "Model Training": 4.Training.md
+      - "Prediction & Inference": 5.Inference.md
+  - Advanced Applications:
+      - "Universal Materials Models": 6.UMM_odyssey.md
