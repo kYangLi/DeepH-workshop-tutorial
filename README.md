@@ -11,16 +11,18 @@ model training, inference, and the universal materials model.
 ## Repository layout
 
 ```
-docs/                      # the tutorial itself (MkDocs source, published on Read the Docs)
-  index.md                 #   home page
-  1.Theoretical_backgrounds.md
-  2.Installation.md
-  3.Interface.md
-  4.Training.md
-  5.Inference.md
-  6.UMM_odyssey.md
-  figures/
-.mkdocs.yml                # MkDocs config (docs_dir: docs)
+docs/                      # the tutorial itself, one folder per language
+  en/                      #   English sources (published as /en/…)
+    index.md
+    1.Theoretical_backgrounds.md
+    2.Installation.md
+    3.Interface.md
+    4.Training.md
+    5.Inference.md
+    6.UMM_odyssey.md
+    figures/
+  zh/                      #   Chinese sources, once translated (published as /zh-cn/…)
+.mkdocs.yml                # MkDocs config; docs_dir is chosen by DOCS_DIR
 .readthedocs.yaml          # Read the Docs build recipe
 .requirements.txt          # build dependencies
 ```
@@ -33,7 +35,11 @@ uv pip install -r .requirements.txt
 uv run mkdocs serve -f .mkdocs.yml
 ```
 
-Then open <http://127.0.0.1:8000/>.
+Then open <http://127.0.0.1:8000/>. To preview another language, point `DOCS_DIR` at it:
+
+```bash
+DOCS_DIR=docs/zh uv run mkdocs serve -f .mkdocs.yml
+```
 
 ## Editions
 
@@ -45,6 +51,24 @@ Each workshop year is a long-lived branch, published by Read the Docs as a versi
 
 A fix to an old edition therefore goes to its own branch and never disturbs the current
 one. Adding a year means branching, not moving files.
+
+## Languages
+
+One repository, one set of branches, two Read the Docs projects:
+
+| Read the Docs project | language | `DOCS_DIR` | URL |
+|---|---|---|---|
+| `deeph-workshop-tutorial` | English | `docs/en` (default) | `/en/…` |
+| `deeph-workshop-tutorial-zh` | 简体中文 | `docs/zh` | `/zh-cn/…` |
+
+`.mkdocs.yml` takes `docs_dir` from the `DOCS_DIR` environment variable, so the two
+projects build different source trees from the same commit. The Chinese project is added
+as a **translation** of the English one, which is what gives the language switcher and
+the `/zh-cn/` prefix. Nothing is duplicated between the branches, so a year's English and
+Chinese text are reviewed in the same pull request.
+
+Both projects build every version listed above, so `/zh-cn/2025/` exists as soon as the
+`2025` branch has Chinese sources.
 
 ## License
 

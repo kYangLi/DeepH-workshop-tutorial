@@ -5,7 +5,7 @@ repo_name: kYangLi/DeepH-workshop-tutorial
 edit_uri: edit/main/docs/
 site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
 
-docs_dir: "docs"
+docs_dir: !ENV [DOCS_DIR, "docs/en"]
 
 theme:
   name: readthedocs
