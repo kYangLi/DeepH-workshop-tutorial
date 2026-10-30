@@ -12,18 +12,14 @@ model training, inference, and the universal materials model.
 
 ```
 docs/                      # the tutorial itself (MkDocs source, published on Read the Docs)
-  index.md                 #   landing page, links the editions
-  2025/                    #   one folder per workshop year, each self-contained
-    index.md
-    1.Theoretical_backgrounds.md
-    2.Installation.md
-    3.Interface.md
-    4.Training.md
-    5.Inference.md
-    6.UMM_odyssey.md
-    figures/
-  2026/                    #   next edition, written independently
-    index.md
+  index.md                 #   home page
+  1.Theoretical_backgrounds.md
+  2.Installation.md
+  3.Interface.md
+  4.Training.md
+  5.Inference.md
+  6.UMM_odyssey.md
+  figures/
 .mkdocs.yml                # MkDocs config (docs_dir: docs)
 .readthedocs.yaml          # Read the Docs build recipe
 .requirements.txt          # build dependencies
@@ -41,13 +37,14 @@ Then open <http://127.0.0.1:8000/>.
 
 ## Editions
 
-There is one folder per workshop year under `docs/`, and the editions are independent:
+Each workshop year is a long-lived branch, published by Read the Docs as a version:
 
-- `docs/2025/` is the 2025 edition. It keeps being corrected and updated in place, so its
-  links stay `…/en/latest/2025/…` for good.
-- `docs/2026/` is the 2026 edition, written separately rather than derived from 2025.
+- `main` — the edition currently being taught, built as **latest**. When the next year is
+  written, `main` becomes that year; the previous edition stays on its own branch.
+- `2025` — the 2025 edition, kept at `…/en/2025/` and still updated in place.
 
-Adding a year means adding a folder and a `nav` entry; nothing in an older edition moves.
+A fix to an old edition therefore goes to its own branch and never disturbs the current
+one. Adding a year means branching, not moving files.
 
 ## License
 
