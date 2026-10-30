@@ -1,4 +1,4 @@
-site_name: Tutorial for DeepH-pack Workshop 2025
+site_name: DeepH Workshop Tutorial
 site_url: https://deeph-workshop-tutorial.readthedocs.io/
 repo_url: https://github.com/kYangLi/DeepH-workshop-tutorial/
 repo_name: kYangLi/DeepH-workshop-tutorial
@@ -15,16 +15,16 @@ plugins:
 
 nav:
   - Home: index.md
-  - Theoretical Backgrounds:
-      - "Fundamentals": 1.Theoretical_backgrounds.md
-  - Getting Started:
-      - "Installation Guide": 2.Installation.md
-      - "Data Interface Setup": 3.Interface.md
-  - Core Workflows:
-      - "Model Training": 4.Training.md
-      - "Prediction & Inference": 5.Inference.md
-  - Advanced Applications:
-      - "Universal Materials Models": 6.UMM_odyssey.md
+  - "Workshop 2025":
+      - "Overview": 2025/index.md
+      - "Theoretical Backgrounds": 2025/1.Theoretical_backgrounds.md
+      - "Installation Guide": 2025/2.Installation.md
+      - "Data Interface Setup": 2025/3.Interface.md
+      - "Model Training": 2025/4.Training.md
+      - "Prediction & Inference": 2025/5.Inference.md
+      - "Universal Materials Models": 2025/6.UMM_odyssey.md
+  - "Workshop 2026":
+      - "Overview": 2026/index.md
 
 copyright: "Copyright &copy; 2025 DeepH Team"
 

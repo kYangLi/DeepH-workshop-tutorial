@@ -12,14 +12,18 @@ model training, inference, and the universal materials model.
 
 ```
 docs/                      # the tutorial itself (MkDocs source, published on Read the Docs)
-  index.md                 #   home page
-  1.Theoretical_backgrounds.md
-  2.Installation.md
-  3.Interface.md
-  4.Training.md
-  5.Inference.md
-  6.UMM_odyssey.md
-  figures/                 #   images used by the chapters
+  index.md                 #   landing page, links the editions
+  2025/                    #   one folder per workshop year, each self-contained
+    index.md
+    1.Theoretical_backgrounds.md
+    2.Installation.md
+    3.Interface.md
+    4.Training.md
+    5.Inference.md
+    6.UMM_odyssey.md
+    figures/
+  2026/                    #   next edition, written independently
+    index.md
 .mkdocs.yml                # MkDocs config (docs_dir: docs)
 .readthedocs.yaml          # Read the Docs build recipe
 .requirements.txt          # build dependencies
@@ -35,13 +39,15 @@ uv run mkdocs serve -f .mkdocs.yml
 
 Then open <http://127.0.0.1:8000/>.
 
-## Versioning
+## Editions
 
-The repository hosts every year's workshop rather than one repository per year:
+There is one folder per workshop year under `docs/`, and the editions are independent:
 
-- `main` is the tutorial being prepared for the next workshop; Read the Docs builds it as **latest**.
-- Each finished workshop is tagged `ws<year>` (e.g. `ws2025`) and activated as a fixed
-  Read the Docs version, so old links keep working while the text keeps evolving.
+- `docs/2025/` is the 2025 edition. It keeps being corrected and updated in place, so its
+  links stay `…/en/latest/2025/…` for good.
+- `docs/2026/` is the 2026 edition, written separately rather than derived from 2025.
+
+Adding a year means adding a folder and a `nav` entry; nothing in an older edition moves.
 
 ## License
 
