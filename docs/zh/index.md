@@ -1,4 +1,4 @@
-# DeepH-pack Workshop 2025 中文教程
+# DeepH-pack 2025 用户大会
 
 > 作者：Yang Li（DeepH-pack 训练部分）、Bohen Zhao（DeepH-pack 推理部分）、
 > Honggeng Tao（DeepH-dock 部分）、Zechen Tang（接口部分）、Yong Xu（课题组负责人）
