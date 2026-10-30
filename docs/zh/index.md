@@ -1,7 +1,6 @@
 # DeepH-pack 2025 用户大会
 
-> 作者：Yang Li（DeepH-pack 训练部分）、Bohen Zhao（DeepH-pack 推理部分）、
-> Honggeng Tao（DeepH-dock 部分）、Zechen Tang（接口部分）、Yong Xu（课题组负责人）
+> 作者：李洋（训练部分）、赵柏恒（推理部分）、陶泓耕（数据准备）、唐泽宸（接口部分）、徐勇（总体指导）
 
 本教程面向 [**DeepH-pack**](https://www.nature.com/articles/s43588-022-00265-6) 的实操，
 涵盖环境安装、数据集准备、模型训练、推理，以及通用材料模型（Universal Materials
