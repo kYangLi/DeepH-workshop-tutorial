@@ -16,7 +16,7 @@ plugins:
 nav:
   - Home: index.md
   - "Workshop 2025":
-      - "Overview": 2025/index.md
+      - 2025/index.md
       - "Theoretical Backgrounds": 2025/1.Theoretical_backgrounds.md
       - "Installation Guide": 2025/2.Installation.md
       - "Data Interface Setup": 2025/3.Interface.md
@@ -24,7 +24,7 @@ nav:
       - "Prediction & Inference": 2025/5.Inference.md
       - "Universal Materials Models": 2025/6.UMM_odyssey.md
   - "Workshop 2026":
-      - "Overview": 2026/index.md
+      - 2026/index.md
 
 copyright: "Copyright &copy; 2025 DeepH Team"
 
