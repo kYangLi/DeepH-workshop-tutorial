@@ -47,11 +47,28 @@ Each workshop year is a long-lived branch, published by Read the Docs as a versi
 
 - `main` — the edition being written for the next workshop, built as **latest**. It now
   holds the 2026 preview and grows into the full 2026 tutorial.
+- `2026` — mirrored to `main` so that `…/en/2026/` and `…/zh-cn/2026/` exist while the
+  edition is still being written.
 - `2025` — the finished 2025 edition, served at `…/en/2025/` and `…/zh-cn/2025/`.
 
-When a year is wrapped up it is cut into its own branch and `main` moves on to the next
-one, so a fix to an old edition never disturbs the current one. Adding a year means
-branching, not moving files.
+## Pushing a change
+
+`main` is the only branch to commit on. `2026` follows it, and both refs are updated by a
+single push so they cannot drift apart:
+
+```bash
+git push origin main main:2026
+```
+
+or, with the repository-local alias:
+
+```bash
+git push2
+```
+
+Only commit on `main`; `2026` is a publishing mirror and must never receive commits of its
+own. When the 2026 workshop is over, stop mirroring: `2026` freezes at its last commit and
+`main` moves on to the next edition.
 
 ## Languages
 
