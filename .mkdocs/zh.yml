@@ -9,3 +9,8 @@ nav:
   - 开始使用:
       - 安装指南: 2.Installation.md
       - 数据接口设置: 3.Interface.md
+  - 核心流程:
+      - 模型训练: 4.Training.md
+      - 预测与推理: 5.Inference.md
+  - 进阶应用:
+      - 通用材料模型: 6.UMM_odyssey.md
