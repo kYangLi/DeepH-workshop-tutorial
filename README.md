@@ -14,15 +14,11 @@ model training, inference, and the universal materials model.
 docs/                      # the tutorial itself, one folder per language
   en/                      #   English sources (published as /en/…)
     index.md
-    1.Theoretical_backgrounds.md
-    2.Installation.md
-    3.Interface.md
-    4.Training.md
-    5.Inference.md
-    6.UMM_odyssey.md
+    <chapters>.md
     figures/
   zh/                      #   Chinese sources (published as /zh-cn/…)
     index.md
+    <chapters>.md
     figures/
 .mkdocs.yml                # shared config: theme, extensions, plugins
 .mkdocs/en.yml             # English layer: site_name + nav
@@ -49,12 +45,13 @@ DOCS_DIR=docs/zh I18N_BASE=.mkdocs/zh.yml uv run mkdocs serve -f .mkdocs.yml
 
 Each workshop year is a long-lived branch, published by Read the Docs as a version:
 
-- `main` — the edition currently being taught, built as **latest**. When the next year is
-  written, `main` becomes that year; the previous edition stays on its own branch.
-- `2025` — the 2025 edition, kept at `…/en/2025/` and still updated in place.
+- `main` — the edition being written for the next workshop, built as **latest**. It now
+  holds the 2026 preview and grows into the full 2026 tutorial.
+- `2025` — the finished 2025 edition, served at `…/en/2025/` and `…/zh-cn/2025/`.
 
-A fix to an old edition therefore goes to its own branch and never disturbs the current
-one. Adding a year means branching, not moving files.
+When a year is wrapped up it is cut into its own branch and `main` moves on to the next
+one, so a fix to an old edition never disturbs the current one. Adding a year means
+branching, not moving files.
 
 ## Languages
 
