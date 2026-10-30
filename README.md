@@ -5,8 +5,8 @@ model training, inference, and the universal materials model.
 
 **Read it online: <https://deeph-workshop-tutorial.readthedocs.io/>**
 
-> Authors: Yang Li (DeepH-pack training), Bohen Zhao (DeepH-pack inference),
-> Honggeng Tao (DeepH-dock), Zechen Tang (interface), Yong Xu (group leader)
+> Authors: Yang Li (training), Bohen Zhao (inference), Honggeng Tao (data preparation),
+> Zechen Tang (interface), Yong Xu (overall guidance)
 
 ## Repository layout
 

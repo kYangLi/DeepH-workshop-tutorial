@@ -1,6 +1,6 @@
 # Tutorial for DeepH-pack Workshop 2025
 
-> `Authors: Yang Li (DeepH-pack training part), Bohen Zhao (DeepH-pack inference part), Honggeng Tao (DeepH-dock part), Zechen Tang (interface part) and Yong Xu (DeepH group leader)`
+> `Authors: Yang Li (training), Bohen Zhao (inference), Honggeng Tao (data preparation), Zechen Tang (interface) and Yong Xu (overall guidance)`
 
 A hands-on tutorial for [**DeepH-pack**](https://www.nature.com/articles/s43588-022-00265-6) covering environment installation, dataset preparation, model training, inference, and universal material model odyssey!
 
