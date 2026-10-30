@@ -8,11 +8,6 @@ Model）的探索。
 
 ![封面](figures/Head_Figure.jpg)
 
-## 翻译进度
-
-中文版已完成全部六章。英文原文可在页面**右下角**的 Read the Docs 悬浮按钮里切换：
-展开后 "Translations" 一栏会列出 English 与简体中文。
-
 ## 教程结构
 
 - `1.Theoretical_backgrounds.md`：理论背景的简要技术导引。
