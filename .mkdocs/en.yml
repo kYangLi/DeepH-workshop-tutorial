@@ -1,6 +1,9 @@
 site_name: Tutorial for DeepH-pack Workshop 2025
 site_description: "Comprehensive guide for DeepH-pack: from theory to practical applications with Universal Materials Models"
 
+theme:
+  language: en
+
 nav:
   - Home: index.md
   - Theoretical Backgrounds:

@@ -2,6 +2,9 @@ site_name: 2025年DeepH研讨会
 site_description: "2025年DeepH研讨会中文教程：从理论到实践，以及通用材料模型"
 
 # 只列出 docs/zh 下已经存在的文件，翻译完一章再往这里加一行。
+theme:
+  language: zh
+
 nav:
   - 首页: index.md
   - 理论背景:
