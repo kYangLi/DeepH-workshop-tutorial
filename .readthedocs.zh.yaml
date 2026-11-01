@@ -1,0 +1,20 @@
+# Chinese build recipe for the 2025 edition.
+#
+# The 2025 edition is built with MkDocs, and the language is picked by the
+# DOCS_DIR environment variable set in the Chinese Read the Docs project.
+# The file exists so that project, whose "Path for .readthedocs.yaml" points at
+# .readthedocs.zh.yaml (needed by the 2026 edition), can still build this older
+# version of the same repository.
+version: 2
+
+build:
+  os: ubuntu-24.04
+  tools:
+    python: "3.13"
+
+mkdocs:
+  configuration: .mkdocs.yml
+
+python:
+  install:
+    - requirements: .requirements.txt
