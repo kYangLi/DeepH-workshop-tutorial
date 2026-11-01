@@ -27,7 +27,7 @@ docs/
     <chapters>.md
     _static/custom/workshop.css
 .readthedocs.yaml          # English build recipe
-.readthedocs.zh.yaml       # Chinese build recipe
+docs/zh/.readthedocs.yaml  # Chinese build recipe (sub-folder; RTD only accepts this name)
 .requirements.txt          # build dependencies
 ```
 
@@ -80,10 +80,12 @@ One repository, one branch per year, two Read the Docs projects:
 | Read the Docs project | language | build recipe | URL |
 |---|---|---|---|
 | `deeph-workshop-tutorial` | English | `.readthedocs.yaml` → `docs/en/conf.py` | `/en/…` |
-| `deeph-workshop-tutorial-zh` | 简体中文 | `.readthedocs.zh.yaml` → `docs/zh/conf.py` | `/zh-cn/…` |
+| `deeph-workshop-tutorial-zh` | 简体中文 | `docs/zh/.readthedocs.yaml` → `docs/zh/conf.py` | `/zh-cn/…` |
 
-Both configurations live in the repository, and each Read the Docs project points at its
-own one through **Path for .readthedocs.yaml** in the project settings. That is what lets
+Read the Docs only accepts a file named `.readthedocs.yaml`, so the Chinese project points
+at the copy inside `docs/zh/` through **Path for .readthedocs.yaml** in its settings, while
+the English project uses the one at the repository root. Paths inside the file are always
+relative to the repository root, not to the file. That is what lets
 one repository carry two source trees without duplicating anything: the English and
 Chinese pages of a chapter sit side by side and are reviewed in the same pull request.
 
