@@ -9,8 +9,7 @@
   if (lang !== "en" && lang !== "zh-cn") return;
 
   var target = lang === "en" ? "zh-cn" : "en";
-  parts[0] = target;
-  var href = "/" + parts.join("/") + window.location.search;
+  var href = window.location.pathname.replace(/^\/(en|zh-cn)(?=\/|$)/, "/" + target) + window.location.search;
 
   function add() {
     var box = document.querySelector(".wy-side-nav-search");
