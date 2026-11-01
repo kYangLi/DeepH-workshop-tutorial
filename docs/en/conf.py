@@ -29,5 +29,6 @@ html_theme_options = {
     "use_edit_page_button": False,
     "use_issues_button": False,
 }
-html_static_path = ["_static"]
+html_static_path = ["../_static"]
 html_css_files = ["custom/workshop.css"]
+html_js_files = ["custom/lang-switch.js"]
