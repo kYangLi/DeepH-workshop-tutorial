@@ -15,3 +15,17 @@ Prof. Yong Xu and Prof. Wenhui Duan's group at the Department of Physics, Tsingh
 University. Instead of fitting potential energy surfaces, it learns the electronic
 Hamiltonian — the quantity from which band structures, density of states and other
 mean-field-level properties follow.
+
+## How to cite
+
+If this tutorial helped your work, please cite the DeepH-pack paper:
+
+- Yang Li, Yanzhen Wang, Boheng Zhao, *et al.* **DeepH-pack: A general-purpose neural
+  network package for deep-learning electronic structure calculations.** arXiv:2601.02938 (2026).
+- Original framework: He Li, Zun Wang, Nianlong Zou, *et al.* **Deep-learning density
+  functional theory Hamiltonian for efficient ab initio electronic-structure calculation.**
+  Nat. Comput. Sci. 2, 367 (2022).
+
+BibTeX entries and the citation policy are on the
+[citation page](https://docs.deeph-pack.com/deeph-pack/en/latest/citation_and_community.html)
+of the DeepH-pack documentation.
