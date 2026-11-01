@@ -2,7 +2,7 @@
 
 > **版本说明：** 本教程是 2025 年研讨会的快照，基于 **DeepH-pack 1.0.6**（`deepx-1.0.6+light`）。
 > 内容保持当时讲授的原样，不随后续版本更新；最新文档请见
-> <https://deeph-pack-docs.readthedocs.io/>。
+> <https://docs.deeph-pack.com/deeph-pack/>。
 
 > 作者：李洋（训练部分）、赵柏恒（推理部分）、陶泓耕（数据准备）、唐泽宸（接口部分）、徐勇（总体指导）
 

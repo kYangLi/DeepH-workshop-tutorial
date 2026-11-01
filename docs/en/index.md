@@ -3,7 +3,7 @@
 > **Version note:** this is a snapshot of the 2025 workshop and was written against
 > **DeepH-pack 1.0.6** (`deepx-1.0.6+light`). It is kept as it was taught and is not updated
 > for later releases. For the current package documentation see
-> <https://deeph-pack-docs.readthedocs.io/>.
+> <https://docs.deeph-pack.com/deeph-pack/>.
 
 > `Authors: Yang Li (training), Bohen Zhao (inference), Honggeng Tao (data preparation), Zechen Tang (interface) and Yong Xu (overall guidance)`
 
