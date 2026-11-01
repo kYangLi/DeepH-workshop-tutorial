@@ -11,8 +11,7 @@
   if (lang !== "en" && lang !== "zh-cn") return;
 
   var target = lang === "en" ? "zh-cn" : "en";
-  parts[0] = target;
-  var href = "/" + parts.join("/") + window.location.search;
+  var href = window.location.pathname.replace(/^\/(en|zh-cn)(?=\/|$)/, "/" + target) + window.location.search;
 
   function add() {
     var bar = document.querySelector(".article-header-buttons");
