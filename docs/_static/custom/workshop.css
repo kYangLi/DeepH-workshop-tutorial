@@ -17,3 +17,11 @@ html[data-theme="light"] {
   font-weight: 600;
   letter-spacing: 0.01em;
 }
+
+/* sphinx-book-theme shows two search widgets: a button in the header and one in
+   the sidebar. Keep the sidebar one, which is the persistent, visible one. */
+@media (min-width: 960px) {
+  .bd-header .search-button-field {
+    display: none;
+  }
+}

@@ -28,6 +28,9 @@ html_theme_options = {
     "use_fullscreen_button": True,
     "use_edit_page_button": False,
     "use_issues_button": False,
+    "repository_url": "https://github.com/kYangLi/DeepH-workshop-tutorial",
+    "repository_provider": "github",
+    "use_repository_button": True,
 }
 html_static_path = ["../_static"]
 html_css_files = ["custom/workshop.css"]
