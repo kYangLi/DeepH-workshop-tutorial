@@ -33,8 +33,6 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
-    - toc.integrate
-    - navigation.expand
     - navigation.sections
     - navigation.top
     - navigation.footer
