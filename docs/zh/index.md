@@ -27,3 +27,15 @@ DeepH（Deep-learning electronic Hamiltonian methods）是清华大学物理系�
 
 BibTeX 条目与引用规范见 DeepH-pack 文档的
 [引用与社区页](https://docs.deeph-pack.com/deeph-pack/en/latest/citation_and_community.html)。
+
+```{toctree}
+:maxdepth: 2
+:caption: 教程结构
+
+1.Theoretical_backgrounds
+2.Installation
+3.Interface
+4.Training
+5.Inference
+6.UMM_odyssey
+```

@@ -29,3 +29,15 @@ If this tutorial helped your work, please cite the DeepH-pack paper:
 BibTeX entries and the citation policy are on the
 [citation page](https://docs.deeph-pack.com/deeph-pack/en/latest/citation_and_community.html)
 of the DeepH-pack documentation.
+
+```{toctree}
+:maxdepth: 2
+:caption: Tutorial
+
+1.Theoretical_backgrounds
+2.Installation
+3.Interface
+4.Training
+5.Inference
+6.UMM_odyssey
+```
