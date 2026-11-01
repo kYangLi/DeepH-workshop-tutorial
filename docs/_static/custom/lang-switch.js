@@ -18,14 +18,14 @@
     if (!bar || bar.querySelector(".lang-switch")) return;
 
     var link = document.createElement("a");
-    link.className = "btn btn-sm nav-link pst-navbar-icon lang-switch";
+    link.className = "btn btn-sm lang-switch";
     link.href = href;
     link.title = target === "zh-cn" ? "切换到中文" : "Switch to English";
     link.setAttribute("aria-label", link.title);
+    link.setAttribute("data-bs-toggle", "tooltip");
+    link.setAttribute("data-bs-placement", "bottom");
     link.innerHTML =
-      '<span style="font-size:.78rem;font-weight:600;letter-spacing:.02em">' +
-      (target === "zh-cn" ? "中文" : "EN") +
-      "</span>";
+      '<span class="btn__icon-container"><i class="fa-solid fa-globe"></i></span>';
 
     bar.insertBefore(link, bar.firstChild);
   }

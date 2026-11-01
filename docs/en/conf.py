@@ -25,7 +25,7 @@ html_theme_options = {
     "show_toc_level": 2,
     "show_navbar_depth": 2,
     "use_download_button": False,
-    "use_fullscreen_button": True,
+    "use_fullscreen_button": False,
     "use_edit_page_button": False,
     "use_issues_button": False,
     "repository_url": "https://github.com/kYangLi/DeepH-workshop-tutorial",
