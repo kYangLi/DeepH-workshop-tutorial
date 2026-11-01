@@ -18,9 +18,20 @@
     var link = document.createElement("a");
     link.className = "lang-switch";
     link.href = href;
-    link.textContent = target === "zh-cn" ? "中文" : "English";
+    link.title = target === "zh-cn" ? "切换到中文" : "Switch to English";
+    link.innerHTML =
+      '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" ' +
+      'stroke="currentColor" stroke-width="2" stroke-linecap="round" ' +
+      'style="vertical-align:-2px;margin-right:5px">' +
+      '<circle cx="12" cy="12" r="9"></circle>' +
+      '<path d="M3 12h18"></path>' +
+      '<path d="M12 3c2.6 2.8 2.6 15.2 0 18"></path>' +
+      '<path d="M12 3c-2.6 2.8-2.6 15.2 0 18"></path></svg>' +
+      (target === "zh-cn" ? "中文" : "English");
     link.style.cssText =
-      "display:block;margin-top:6px;font-size:13px;color:#fff;opacity:.9;text-decoration:underline";
+      "display:inline-flex;align-items:center;justify-content:center;margin-top:8px;" +
+      "padding:2px 10px;border:1px solid rgba(255,255,255,.5);border-radius:12px;" +
+      "font-size:12px;color:#fff;opacity:.9;text-decoration:none";
     box.appendChild(link);
   }
 
