@@ -11,7 +11,7 @@ docs_dir: !ENV [DOCS_DIR, "docs/en"]
 
 site_url: https://deeph-workshop-tutorial.readthedocs.io/
 repo_url: https://github.com/kYangLi/DeepH-workshop-tutorial/
-repo_name: kYangLi/DeepH-workshop-tutorial
+repo_name: GitHub
 edit_uri: edit/main/docs/
 
 theme:
