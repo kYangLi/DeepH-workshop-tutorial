@@ -1,10 +1,10 @@
 # Chinese build recipe for the 2025 edition.
 #
-# The 2025 edition is built with MkDocs, and the language is picked by the
+# The 2025 edition is built with MkDocs; the language is selected by the
 # DOCS_DIR environment variable set in the Chinese Read the Docs project.
-# The file exists so that project, whose "Path for .readthedocs.yaml" points at
-# .readthedocs.zh.yaml (needed by the 2026 edition), can still build this older
-# version of the same repository.
+# This file exists so that project - whose "Path for .readthedocs.yaml" points
+# at docs/zh/.readthedocs.yaml for the 2026 edition - can still build this
+# older version of the same repository.
 version: 2
 
 build:
