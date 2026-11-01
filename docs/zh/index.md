@@ -6,7 +6,7 @@
 中文版同步更新。
 
 2025 版教程仍然可以访问：在页面右下角的 Read the Docs 悬浮按钮里把版本切到 **2025**，
-或直接打开 [2025 版教程](/zh-cn/2025/)。
+或直接打开 [2025 版教程](https://deeph-workshop-tutorial.readthedocs.io/zh-cn/2025/)。
 
 ## 关于 DeepH
 

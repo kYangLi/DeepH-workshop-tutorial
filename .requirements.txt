@@ -1,3 +1,4 @@
-mkdocs
-mkdocs-material
-pymdown-extensions
+sphinx
+sphinx-book-theme
+myst-parser
+sphinx-design

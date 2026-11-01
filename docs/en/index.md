@@ -6,7 +6,7 @@ It is a substantial revision of the 2025 edition, and will cover installation, t
 interface, training and inference from scratch.
 
 The 2025 edition is still available: pick version **2025** in the Read the Docs flyout at
-the bottom right, or open the [2025 edition](/en/2025/) directly.
+the bottom right, or open the [2025 edition](https://deeph-workshop-tutorial.readthedocs.io/en/2025/) directly.
 
 ## About DeepH
 

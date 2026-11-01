@@ -10,20 +10,24 @@ model training, inference, and the universal materials model.
 
 ## Repository layout
 
+Built with Sphinx and the [sphinx-book-theme](https://sphinx-book-theme.readthedocs.io/),
+the same stack as the DeepH-pack manual, restyled with a teal accent so the two sites are
+told apart at a glance.
+
 ```
-docs/                      # the tutorial itself, one folder per language
-  en/                      #   English sources (published as /en/…)
+docs/
+  en/                      # English edition (published as /en/…)
+    conf.py
     index.md
     <chapters>.md
-    figures/
-  zh/                      #   Chinese sources (published as /zh-cn/…)
+    _static/custom/workshop.css
+  zh/                      # Chinese edition (published as /zh-cn/…)
+    conf.py
     index.md
     <chapters>.md
-    figures/
-.mkdocs.yml                # shared config: theme, extensions, plugins
-.mkdocs/en.yml             # English layer: site_name + nav
-.mkdocs/zh.yml             # Chinese layer: site_name + nav
-.readthedocs.yaml          # Read the Docs build recipe
+    _static/custom/workshop.css
+.readthedocs.yaml          # English build recipe
+.readthedocs.zh.yaml       # Chinese build recipe
 .requirements.txt          # build dependencies
 ```
 
@@ -32,24 +36,23 @@ docs/                      # the tutorial itself, one folder per language
 ```bash
 uv venv .venv-docs --python 3.13
 uv pip install -r .requirements.txt
-uv run mkdocs serve -f .mkdocs.yml
+uv run sphinx-build -c docs/en -b html docs/en _build/en
+uv run sphinx-build -c docs/zh -b html docs/zh _build/zh
 ```
 
-Then open <http://127.0.0.1:8000/>. To preview the Chinese build, point both variables at it:
-
-```bash
-DOCS_DIR=docs/zh I18N_BASE=.mkdocs/zh.yml uv run mkdocs serve -f .mkdocs.yml
-```
+Then open `_build/en/index.html` or `_build/zh/index.html` directly in a browser.
 
 ## Editions
 
 Each workshop year is a long-lived branch, published by Read the Docs as a version:
 
 - `main` — the edition being written for the next workshop, built as **latest**. It now
-  holds the 2026 preview and grows into the full 2026 tutorial.
+  holds the 2026 edition.
 - `2026` — mirrored to `main` so that `…/en/2026/` and `…/zh-cn/2026/` exist while the
   edition is still being written.
-- `2025` — the finished 2025 edition, served at `…/en/2025/` and `…/zh-cn/2025/`.
+- `2025` — the finished 2025 edition, served at `…/en/2025/` and `…/zh-cn/2025/`. It is
+  still built with MkDocs and the Read the Docs theme: the theme difference is the visual
+  signature of the year.
 
 ## Pushing a change
 
@@ -72,28 +75,27 @@ own. When the 2026 workshop is over, stop mirroring: `2026` freezes at its last 
 
 ## Languages
 
-One repository, one set of branches, two Read the Docs projects:
+One repository, one branch per year, two Read the Docs projects:
 
-| Read the Docs project | language | `DOCS_DIR` | `I18N_BASE` | URL |
-|---|---|---|---|---|
-| `deeph-workshop-tutorial` | English | — (default `docs/en`) | — (default `.mkdocs/en.yml`) | `/en/…` |
-| `deeph-workshop-tutorial-zh` | 简体中文 | `docs/zh` | `.mkdocs/zh.yml` | `/zh-cn/…` |
+| Read the Docs project | language | build recipe | URL |
+|---|---|---|---|
+| `deeph-workshop-tutorial` | English | `.readthedocs.yaml` → `docs/en/conf.py` | `/en/…` |
+| `deeph-workshop-tutorial-zh` | 简体中文 | `.readthedocs.zh.yaml` → `docs/zh/conf.py` | `/zh-cn/…` |
 
-Both variables are set under **Admin → Environment Variables** in the Read the Docs
-project. `.mkdocs.yml` reads them while building, so the two projects build different
-source trees and different nav from the same commit — no branch per language, no
-duplicated content. The Chinese project is added as a **translation** of the English one,
-which is what gives the language switcher and the `/zh-cn/` prefix.
+Both configurations live in the repository, and each Read the Docs project points at its
+own one through **Path for .readthedocs.yaml** in the project settings. That is what lets
+one repository carry two source trees without duplicating anything: the English and
+Chinese pages of a chapter sit side by side and are reviewed in the same pull request.
 
-Both projects build every version listed above, so `/zh-cn/2025/` works as soon as the
-`2025` branch has Chinese sources.
+The Chinese project is added as a **translation** of the English one, which is what gives
+the language switcher and the `/zh-cn/` prefix.
 
-### Adding a translated chapter
+### Adding a chapter
 
-1. Translate the file into `docs/zh/`, keeping the same filename (`4.Training.md` stays
-   `4.Training.md`) so the two trees stay comparable.
-2. Add a line for it in `.mkdocs/zh.yml` under `nav`. Until a chapter is listed there it
-   is built but unreachable, so translate and publish one chapter at a time.
+1. Write it in `docs/en/` and translate it into `docs/zh/`, keeping the same filename so
+   the two trees stay comparable.
+2. Reference it from the `{toctree}` in that language's `index.md`. A page that is not in
+   a toctree is built but unreachable, so publish chapter by chapter if you like.
 
 ## License
 
