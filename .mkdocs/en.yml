@@ -1,5 +1,8 @@
 site_name: Tutorial for DeepH-pack Workshop 2026
 site_description: "DeepH-pack workshop 2026: installation, data interface, training and inference"
 
+theme:
+  language: en
+
 nav:
   - Home: index.md

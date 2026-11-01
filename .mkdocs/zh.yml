@@ -1,6 +1,9 @@
 site_name: 2026年DeepH研讨会
 site_description: "2026年DeepH研讨会中文教程"
 
+theme:
+  language: zh
+
 # 只列出 docs/zh 下已经存在的文件，写完一章再往这里加一行。
 nav:
   - 首页: index.md
