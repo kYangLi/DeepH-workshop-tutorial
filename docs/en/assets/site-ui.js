@@ -1,9 +1,9 @@
 /* 2025 edition: language link in the breadcrumb row + an edition banner.
  *
  * Read the Docs serves /<language>/<version>/..., so the other language is the
- * same path with the first segment swapped. The banner lives at the top of the
+ * same path with the first segment swapped. The banner sits at the top of the
  * content so readers landing on a chapter from a search engine still learn that
- * this is a snapshot and where the current edition is.
+ * this is an archived edition and where the current material is.
  */
 (function () {
   var parts = window.location.pathname.split("/").filter(Boolean);
@@ -16,10 +16,9 @@
 
   var copy = {
     langLabel: "中文",
-    banner: '<strong>2025 snapshot</strong> — this tutorial was written against DeepH-pack 1.0.6 ' +
-      'and is kept as it was taught. Current package documentation: ' +
-      '<a href="https://docs.deeph-pack.com/deeph-pack/">docs.deeph-pack.com</a>. ' +
-      '<a href="https://deeph-workshop-tutorial.readthedocs.io/en/2026/">2026 edition →</a>'
+    banner: "<strong>DeepH Workshop 2025 · archived edition</strong><br>Written for DeepH-pack 1.0.6 and frozen at the version presented at the workshop.",
+    links: '<a href="https://docs.deeph-pack.com/deeph-pack/">DeepH-pack documentation</a>' +
+      '<a href="https://deeph-workshop-tutorial.readthedocs.io/en/2026/"><strong>2026 edition →</strong></a>'
   };
 
   function addLangLink() {
@@ -49,10 +48,18 @@
     var bar = document.createElement("div");
     bar.className = "edition-banner";
     bar.style.cssText =
-      "display:flex;align-items:flex-start;gap:12px;margin:0 0 20px;padding:10px 14px;" +
-      "background:#fff8e1;border:1px solid #f0e0a8;border-radius:4px;" +
+      "display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;margin:0 0 20px;" +
+      "padding:10px 14px;background:#fff8e1;border:1px solid #f0e0a8;border-radius:4px;" +
       "font-size:13px;line-height:1.6;color:#5c4a12";
-    bar.innerHTML = '<div style="flex:1">' + copy.banner + "</div>";
+
+    var text = document.createElement("div");
+    text.style.cssText = "flex:1 1 320px;min-width:0";
+    text.innerHTML = copy.banner;
+
+    var actions = document.createElement("div");
+    actions.style.cssText =
+      "display:flex;align-items:center;gap:16px;white-space:nowrap;font-size:13px";
+    actions.innerHTML = copy.links;
 
     var close = document.createElement("button");
     close.type = "button";
@@ -65,6 +72,9 @@
       bar.remove();
       try { sessionStorage.setItem("edition-banner-closed", "1"); } catch (e) {}
     });
+
+    bar.appendChild(text);
+    bar.appendChild(actions);
     bar.appendChild(close);
 
     var inner = content.querySelector(".rst-content") || content;
