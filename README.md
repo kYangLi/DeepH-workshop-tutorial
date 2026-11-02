@@ -3,7 +3,7 @@
 Hands-on tutorial for the DeepH-pack workshop: environment setup, dataset generation,
 model training, inference, and the universal materials model.
 
-**Read it online: <https://deeph-workshop-tutorial.readthedocs.io/>**
+**Read it online: <https://workshop.deeph-pack.com/>**
 
 > Authors: Yang Li (training), Bohen Zhao (inference), Honggeng Tao (data preparation),
 > Zechen Tang (interface), Yong Xu (overall guidance)
@@ -27,7 +27,7 @@ docs/
     <chapters>.md
     _static/custom/workshop.css
 .readthedocs.yaml          # English build recipe
-docs/zh/.readthedocs.yaml  # Chinese build recipe (sub-folder; RTD only accepts this name)
+docs/zh/.readthedocs.yaml  # Chinese build recipe (the file name is fixed by the format)
 .requirements.txt          # build dependencies
 ```
 
@@ -44,15 +44,16 @@ Then open `_build/en/index.html` or `_build/zh/index.html` directly in a browser
 
 ## Editions
 
-Each workshop year is a long-lived branch, published by Read the Docs as a version:
+Each workshop year is a long-lived branch, published as a version of the site at
+<https://workshop.deeph-pack.com>:
 
-- `main` — the edition being written for the next workshop, built as **latest**. It now
-  holds the 2026 edition.
-- `2026` — mirrored to `main` so that `…/en/2026/` and `…/zh-cn/2026/` exist while the
-  edition is still being written.
-- `2025` — the finished 2025 edition, served at `…/en/2025/` and `…/zh-cn/2025/`. It is
+- `main` — the edition being written for the next workshop, published as **latest**
+  (`/en/latest/`, `/zh-cn/latest/`). It holds the 2026 edition.
+- `2025` — the finished 2025 edition, served at `/en/2025/` and `/zh-cn/2025/`. It is
   still built with MkDocs and the Read the Docs theme: the theme difference is the visual
   signature of the year.
+- `2026` — a mirror of `main`, kept in step by the command below. It is not published
+  under its own URL and can be retired once the edition ships.
 
 ## Pushing a change
 
@@ -75,22 +76,20 @@ own. When the 2026 workshop is over, stop mirroring: `2026` freezes at its last 
 
 ## Languages
 
-One repository, one branch per year, two Read the Docs projects:
+One repository, one branch per year, one site with two languages:
 
-| Read the Docs project | language | build recipe | URL |
+| language | source | build recipe | URL |
 |---|---|---|---|
-| `deeph-workshop-tutorial` | English | `.readthedocs.yaml` → `docs/en/conf.py` | `/en/…` |
-| `deeph-workshop-tutorial-zh` | 简体中文 | `docs/zh/.readthedocs.yaml` → `docs/zh/conf.py` | `/zh-cn/…` |
+| English | `docs/en` | `.readthedocs.yaml` → `docs/en/conf.py` | `/en/…` |
+| 简体中文 | `docs/zh` | `docs/zh/.readthedocs.yaml` → `docs/zh/conf.py` | `/zh-cn/…` |
 
-Read the Docs only accepts a file named `.readthedocs.yaml`, so the Chinese project points
-at the copy inside `docs/zh/` through **Path for .readthedocs.yaml** in its settings, while
-the English project uses the one at the repository root. Paths inside the file are always
-relative to the repository root, not to the file. That is what lets
-one repository carry two source trees without duplicating anything: the English and
-Chinese pages of a chapter sit side by side and are reviewed in the same pull request.
+Each language tree has its own `conf.py` and its own build recipe, so the two can be built
+from the same commit without duplicating anything: the English and Chinese pages of a
+chapter sit side by side and are reviewed in the same pull request.
 
-The Chinese project is added as a **translation** of the English one, which is what gives
-the language switcher and the `/zh-cn/` prefix.
+Deployment is handled outside this repository: a webhook on a push builds the branches and
+publishes them under `workshop.deeph-pack.com`, with `main` as `latest`. Nothing in the
+repository needs a server address, a credential or an internal path.
 
 ### Adding a chapter
 

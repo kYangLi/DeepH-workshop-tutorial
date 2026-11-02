@@ -5,8 +5,8 @@ The 2026 tutorial is being written and will be published here.
 It is a substantial revision of the 2025 edition, and will cover installation, the data
 interface, training and inference from scratch.
 
-The 2025 edition is still available: pick version **2025** in the Read the Docs flyout at
-the bottom right, or open the [2025 edition](https://deeph-workshop-tutorial.readthedocs.io/en/2025/) directly.
+The 2025 edition is still available at
+[workshop.deeph-pack.com/en/2025/](https://workshop.deeph-pack.com/en/2025/).
 
 ## About DeepH
 

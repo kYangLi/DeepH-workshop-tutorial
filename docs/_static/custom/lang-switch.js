@@ -1,8 +1,8 @@
 /* Language switcher injected into the article header.
  *
- * Read the Docs serves every project under /<language>/<version>/..., so the
- * other language is the same path with the first segment swapped. Doing it in
- * the browser keeps the link correct for every version and every page without
+ * The site serves every edition under /<language>/<version>/..., so the other
+ * language is the same path with the first segment swapped. Doing it in the
+ * browser keeps the link correct for every version and every page without
  * templating anything per page.
  */
 (function () {
