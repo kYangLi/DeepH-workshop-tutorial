@@ -18,8 +18,10 @@ DeepH（Deep-learning electronic Hamiltonian methods）是清华大学物理系�
 
 如果本教程对你的工作有帮助，请引用 DeepH-pack 的论文：
 
-- Yang Li, Yanzhen Wang, Boheng Zhao, *et al.* **DeepH-pack: A general-purpose neural
-  network package for deep-learning electronic structure calculations.** arXiv:2601.02938 (2026).
+- Yang Li, Yanzhen Wang, Boheng Zhao, *et al.* **DeepH-pack: a general-purpose neural
+  network package for deep-learning electronic structure calculations.**
+  *npj Comput. Mater.* **12**, 361 (2026).
+  [doi:10.1038/s41524-026-02219-2](https://doi.org/10.1038/s41524-026-02219-2)
 - 原始框架：He Li, Zun Wang, Nianlong Zou, *et al.* **Deep-learning density functional
   theory Hamiltonian for efficient ab initio electronic-structure calculation.**
   Nat. Comput. Sci. 2, 367 (2022).

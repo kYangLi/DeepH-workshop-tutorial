@@ -20,8 +20,10 @@ mean-field-level properties follow.
 
 If this tutorial helped your work, please cite the DeepH-pack paper:
 
-- Yang Li, Yanzhen Wang, Boheng Zhao, *et al.* **DeepH-pack: A general-purpose neural
-  network package for deep-learning electronic structure calculations.** arXiv:2601.02938 (2026).
+- Yang Li, Yanzhen Wang, Boheng Zhao, *et al.* **DeepH-pack: a general-purpose neural
+  network package for deep-learning electronic structure calculations.**
+  *npj Comput. Mater.* **12**, 361 (2026).
+  [doi:10.1038/s41524-026-02219-2](https://doi.org/10.1038/s41524-026-02219-2)
 - Original framework: He Li, Zun Wang, Nianlong Zou, *et al.* **Deep-learning density
   functional theory Hamiltonian for efficient ab initio electronic-structure calculation.**
   Nat. Comput. Sci. 2, 367 (2022).
