@@ -1,6 +1,6 @@
 /* 2025 edition: language link in the breadcrumb row + an edition banner.
  *
- * Read the Docs serves /<language>/<version>/..., so the other language is the
+ * The site serves /<language>/<version>/..., so the other language is the
  * same path with the first segment swapped. The banner sits at the top of the
  * content so readers landing on a chapter from a search engine still learn that
  * this is an archived edition and where the current material is.
@@ -18,7 +18,7 @@
     langLabel: "中文",
     banner: "<strong>DeepH Workshop 2025 · archived edition</strong><br>Written for DeepH-pack 1.0.6 and frozen at the version presented at the workshop.",
     links: '<a href="https://docs.deeph-pack.com/deeph-pack/">DeepH-pack documentation</a>' +
-      '<a href="https://deeph-workshop-tutorial.readthedocs.io/en/2026/"><strong>2026 edition →</strong></a>'
+      '<a href="https://workshop.deeph-pack.com/en/latest/"><strong>2026 edition →</strong></a>'
   };
 
   function addLangLink() {

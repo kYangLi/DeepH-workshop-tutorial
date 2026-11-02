@@ -3,7 +3,7 @@
 Hands-on tutorial for the DeepH-pack workshop: environment setup, dataset generation,
 model training, inference, and the universal materials model.
 
-**Read it online: <https://deeph-workshop-tutorial.readthedocs.io/>**
+**Read it online: <https://workshop.deeph-pack.com/en/2025/>** (<https://workshop.deeph-pack.com/zh-cn/2025/> for Chinese)
 
 > Authors: Yang Li (training), Bohen Zhao (inference), Honggeng Tao (data preparation),
 > Zechen Tang (interface), Yong Xu (overall guidance)
@@ -25,9 +25,9 @@ docs/                      # the tutorial itself, one folder per language
     index.md
     figures/
 .mkdocs.yml                # shared config: theme, extensions, plugins
-.mkdocs/en.yml             # English layer: site_name + nav
-.mkdocs/zh.yml             # Chinese layer: site_name + nav
-.readthedocs.yaml          # Read the Docs build recipe
+.mkdocs/en.yml             # English layer: site_name, nav, edit link
+.mkdocs/zh.yml             # Chinese layer: site_name, nav, edit link
+.readthedocs.yaml          # build recipe used by the deployment pipeline
 .requirements.txt          # build dependencies
 ```
 
@@ -47,32 +47,31 @@ DOCS_DIR=docs/zh I18N_BASE=.mkdocs/zh.yml uv run mkdocs serve -f .mkdocs.yml
 
 ## Editions
 
-Each workshop year is a long-lived branch, published by Read the Docs as a version:
+Each workshop year is a long-lived branch, published as a version of the site at
+<https://workshop.deeph-pack.com>:
 
-- `main` — the edition currently being taught, built as **latest**. When the next year is
-  written, `main` becomes that year; the previous edition stays on its own branch.
-- `2025` — the 2025 edition, kept at `…/en/2025/` and still updated in place.
+- `main` — the edition being written for the next workshop, published as **latest**
+  (`/en/latest/`, `/zh-cn/latest/`).
+- `2025` — this edition, served at `/en/2025/` and `/zh-cn/2025/` and kept in place.
 
 A fix to an old edition therefore goes to its own branch and never disturbs the current
 one. Adding a year means branching, not moving files.
 
 ## Languages
 
-One repository, one set of branches, two Read the Docs projects:
+One repository, one set of branches, two languages built from the same commit:
 
-| Read the Docs project | language | `DOCS_DIR` | `I18N_BASE` | URL |
-|---|---|---|---|---|
-| `deeph-workshop-tutorial` | English | — (default `docs/en`) | — (default `.mkdocs/en.yml`) | `/en/…` |
-| `deeph-workshop-tutorial-zh` | 简体中文 | `docs/zh` | `.mkdocs/zh.yml` | `/zh-cn/…` |
+| language | `DOCS_DIR` | `I18N_BASE` | URL |
+|---|---|---|---|
+| English | — (default `docs/en`) | — (default `.mkdocs/en.yml`) | `/en/…` |
+| 简体中文 | `docs/zh` | `.mkdocs/zh.yml` | `/zh-cn/…` |
 
-Both variables are set under **Admin → Environment Variables** in the Read the Docs
-project. `.mkdocs.yml` reads them while building, so the two projects build different
-source trees and different nav from the same commit — no branch per language, no
-duplicated content. The Chinese project is added as a **translation** of the English one,
-which is what gives the language switcher and the `/zh-cn/` prefix.
+`.mkdocs.yml` reads those two variables while building, so one configuration produces
+either language from one repository — no branch per language, no duplicated content.
 
-Both projects build every version listed above, so `/zh-cn/2025/` works as soon as the
-`2025` branch has Chinese sources.
+Deployment is handled outside this repository: a webhook on a push builds the branches and
+publishes them under `workshop.deeph-pack.com`. Nothing in the repository needs a server
+address, a credential or an internal path.
 
 ### Adding a translated chapter
 
